@@ -1,0 +1,33 @@
+name: th-to-exp
+version: 0.0.1.0
+category: Template Haskell
+synopsis: Provides a way to persist data from compile-time to runtime.
+maintainer: Alexis King
+github: lexi-lambda/th-to-exp
+
+extra-source-files:
+- package.yaml
+- README.md
+- stack.yaml
+
+ghc-options: -Wall
+
+library:
+  source-dirs: library
+  dependencies:
+  - base >= 4.9.0.0 && < 5
+  - template-haskell
+
+tests:
+  th-to-exp-test-suite:
+    source-dirs: test-suite
+    main: Main.hs
+    ghc-options:
+    - -rtsopts
+    - -threaded
+    - -with-rtsopts=-N
+    dependencies:
+    - base
+    - template-haskell
+    - th-to-exp
+    - hspec
