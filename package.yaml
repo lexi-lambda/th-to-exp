@@ -2,10 +2,24 @@ name: th-to-exp
 version: 0.0.1.0
 category: Template Haskell
 synopsis: Provides a way to persist data from compile-time to runtime.
+description: |
+  This package provides a way to persist data from compile-time to runtime by
+  producing Template Haskell expressions that evaluate to particular values. For
+  example, if you have a value @Just 1@, then @toExp (Just 1)@ will produce the
+  /expression/ @[e| Just 1 |]@, which can be used in a splice. For a more direct
+  example, here’s what that looks like without the quasiquote notation:
+
+  >>> toExp (Just 1)
+  AppE (ConE GHC.Base.Just) (LitE (IntegerL 1))
+
+  This is done by using a typeclass, 'ToExp', that can be automatically derived
+  for types that have a 'Generic' instance.
 maintainer: Alexis King
+license: ISC
 github: lexi-lambda/th-to-exp
 
 extra-source-files:
+- LICENSE
 - package.yaml
 - README.md
 - stack.yaml
