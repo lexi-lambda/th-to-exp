@@ -1,5 +1,5 @@
 name: th-to-exp
-version: 0.0.1.0
+version: 0.0.1.1
 category: Template Haskell
 synopsis: Provides a way to persist data from compile-time to runtime.
 description: |
@@ -19,6 +19,7 @@ license: ISC
 github: lexi-lambda/th-to-exp
 
 extra-source-files:
+- CHANGELOG.md
 - LICENSE
 - package.yaml
 - README.md
