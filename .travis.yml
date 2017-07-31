@@ -12,11 +12,15 @@ matrix:
   include:
   - env: ARGS=""
     compiler: ": #stack 8.0.1"
-    addons: { apt: { packages: [ghc-8.0.1], sources: [hvr-ghc] } }
+    addons: { apt: { packages: [libgmp-dev] } }
+
+  - env: ARGS="--stack-yaml=stack.ghc-8.2.yaml"
+    compiler: ": #stack 8.2.1"
+    addons: { apt: { packages: [libgmp-dev] } }
 
   - env: ARGS="--resolver nightly"
     compiler: ": #stack nightly"
-    addons: { apt: { packages: [libgmp,libgmp-dev] } }
+    addons: { apt: { packages: [libgmp-dev] } }
 
   allow_failures:
   # Nightly builds are allowed to fail

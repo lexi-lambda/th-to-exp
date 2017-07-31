@@ -1,3 +1,4 @@
+{-# LANGUAGE CPP #-}
 {-# LANGUAGE DefaultSignatures #-}
 {-# LANGUAGE FlexibleContexts #-}
 {-# LANGUAGE FlexibleInstances #-}
@@ -127,6 +128,12 @@ instance ToExp TH.Type
 instance ToExp TH.TypeFamilyHead
 instance ToExp TH.TySynEqn
 instance ToExp TH.TyVarBndr
+#if MIN_VERSION_template_haskell(2,12,0)
+instance ToExp TH.DerivClause
+instance ToExp TH.DerivStrategy
+instance ToExp TH.PatSynArgs
+instance ToExp TH.PatSynDir
+#endif
 
 --------------------------------------------------------------------------------
 -- GToExp

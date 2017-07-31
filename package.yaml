@@ -30,7 +30,7 @@ library:
   source-dirs: library
   dependencies:
   - base >= 4.9.0.0 && < 5
-  - template-haskell >= 2.11.0.0 && < 2.12
+  - template-haskell >= 2.11.0.0 && < 2.13
 
 tests:
   th-to-exp-test-suite:
